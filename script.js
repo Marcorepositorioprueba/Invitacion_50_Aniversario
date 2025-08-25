@@ -57,6 +57,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Lógica para el botón de audio al hacer scroll ---
+    let lastScrollTop = 0;
+    const audioButtonContainer = document.getElementById('audio-control-container');
+
+    if (audioButtonContainer) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                audioButtonContainer.style.opacity = '0';
+                audioButtonContainer.style.pointerEvents = 'none'; // Disable clicks when hidden
+            } else {
+                // Scrolling up
+                audioButtonContainer.style.opacity = '0.7'; // Restore initial opacity
+                audioButtonContainer.style.pointerEvents = 'auto'; // Enable clicks
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        });
+    }
+
     // --- Lógica para el Formulario RSVP con WhatsApp ---
     const whatsappConfirmBtn = document.getElementById('whatsapp-confirm-btn');
     if (whatsappConfirmBtn) {

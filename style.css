@@ -4,7 +4,7 @@
     bottom: 20px;
     right: calc(50% - 450px + 20px); /* Aligned with content area */
     z-index: 9999;
-    opacity: 0.7;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
 

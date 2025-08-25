@@ -57,26 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Lógica para el botón de audio al hacer scroll ---
-    let lastScrollTop = 0;
-    const audioButtonContainer = document.getElementById('audio-control-container');
-
-    if (audioButtonContainer) {
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop) {
-                // Scrolling down
-                audioButtonContainer.style.opacity = '0';
-                audioButtonContainer.style.pointerEvents = 'none'; // Disable clicks when hidden
-            } else {
-                // Scrolling up
-                audioButtonContainer.style.opacity = '0.7'; // Restore initial opacity
-                audioButtonContainer.style.pointerEvents = 'auto'; // Enable clicks
-            }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-        });
-    }
+    
 
     // --- Lógica para el Formulario RSVP con WhatsApp ---
     const whatsappConfirmBtn = document.getElementById('whatsapp-confirm-btn');
@@ -85,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault(); // Prevenir el comportamiento por defecto del botón
 
             const nombreInput = document.getElementById('nombre-rsvp');
-            const emailInput = document.getElementById('email-rsvp');
 
             // Validar que los campos requeridos no estén vacíos
             if (!nombreInput.value.trim()) {
@@ -96,10 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             const nombre = encodeURIComponent(nombreInput.value.trim());
-            const email = encodeURIComponent(emailInput.value.trim());
 
             // Mensaje predefinido para WhatsApp
-            const message = `¡Hola! Me gustaría confirmar mi asistencia a las Bodas de Oro de Heri y Memo. Mi nombre es ${nombre} y mi correo es ${email}. ¡Nos vemos el 4 de Octubre!`;
+            const message = `¡Hola! Me gustaría confirmar mi asistencia a las Bodas de Oro de Heri y Memo. Mi nombre es ${nombre}. ¡Nos vemos el 4 de Octubre!`;
             const whatsappUrl = `https://wa.link/s1z2co?text=${message}`;
 
             // Abrir WhatsApp en una nueva ventana/pestaña
@@ -109,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Opcional: Resetear el formulario después de enviar
             nombreInput.value = '';
-            emailInput.value = '';
         });
     }
 

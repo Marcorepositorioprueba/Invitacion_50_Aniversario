@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Aniversario - Guillermo y Heriberta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <header id="portada">
+        <h1>Heri y Memo</h1>
+        <h2>Celebran sus Bodas de Oro</h2>
+        <p class="fecha-evento">1975-2025</p>
+        <p class="frase-aniversario">"Hemos navegado por la vida juntos durante 50 años y nuestro amor ha resistido las pruebas del tiempo, hemos tejido una historia de amor que sigue brillando como el oro”</p>
+    </header>
+
+    <main>
+        <section id="historia">
+            <h2>Nuestra Historia</h2>
+            <p>Cincuenta años atrás, dos vidas se unieron en una promesa de amor eterno. Hoy, esa promesa florece en un legado de familia, risas y recuerdos imborrables. Celebremos juntos la increíble historia de amor de Heri y Memo, un viaje de medio siglo que nos inspira a todos.</p>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper carousel-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="imagenes/nh1.jpeg" alt="Recuerdo de 1975"></div>
+                    <div class="swiper-slide"><img src="imagenes/nh2.jpeg" alt="Recuerdo de 1985"></div>
+                    <div class="swiper-slide"><img src="imagenes/nh3.jpeg" alt="Recuerdo de 2000"></div>
+                    <div class="swiper-slide"><img src="imagenes/nh4.jpeg" alt="Recuerdo de 2025"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item left fade-in-section">
+                    <div class="timeline-content">
+                        <h3>1975 - El Comienzo</h3>
+                        <img src="imagenes/nh1.jpeg" alt="Recuerdo de 1975" class="timeline-image image-fade-scale">
+                        <p>El día en que sus caminos se cruzaron y una nueva historia comenzó a escribirse.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right fade-in-section">
+                    <div class="timeline-content">
+                        <h3>1985 - Primeros Pasos</h3>
+                        <img src="imagenes/nh2.jpeg" alt="Recuerdo de 1985" class="timeline-image image-fade-scale">
+                        <p>Construyendo juntos los cimientos de un futuro lleno de sueños y esperanzas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left fade-in-section">
+                    <div class="timeline-content">
+                        <h3>2000 - Creciendo Juntos</h3>
+                        <img src="imagenes/nh3.jpeg" alt="Recuerdo de 2000" class="timeline-image image-fade-scale">
+                        <p>La familia creció, y con ella, el amor y la complicidad que los une.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right fade-in-section">
+                    <div class="timeline-content">
+                        <h3>2025 - Bodas de Oro</h3>
+                        <img src="imagenes/nh4.jpeg" alt="Recuerdo de 2025" class="timeline-image image-fade-scale">
+                        <p>Un legado de amor que perdura, celebrando medio siglo de felicidad y unión inquebrantable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="evento" class="fade-in-section">
+            <h2>Detalles del Evento</h2>
+            <div class="detalle-item">
+                <h3>Fecha y Hora</h3>
+                <p>Sábado, 4 de Octubre de 2025 a las 12:00 horas</p>
+            </div>
+            <div class="detalle-item">
+                <h3>Lugar</h3>
+                <p>Iglesia de la Inmaculada</p>
+                <p>Concepción, (templo grande) Zapotlán</p>
+                <p>de Juárez Hidalgo</p>
+                <a href="https://maps.google.com/?q=Iglesia+de+la+Inmaculada+Concepcion+Zapotlan+de+Juarez+Hidalgo" target="_blank" class="btn-mapa"><i class="fas fa-map-marker-alt"></i> Ver en Mapa</a>
+            </div>
+
+            <div class="detalle-item">
+                <h3>Recepción</h3>
+                <p>Después de la ceremonia religiosa</p>
+                <p>agradecemos tu presencia en Salón Las Margaritas</p>
+                <p>Av. Benito Juárez Sur 56-48, Centro, 42191</p>
+                <p>Acayuca, Hgo</p>
+                <a href="https://maps.app.goo.gl/8B3TBNavDCPKCUw39" target="_blank" class="btn-mapa"><i class="fas fa-map-marker-alt"></i> Ver en Mapa</a>
+            </div>
+        </section>
+
+        <section id="rsvp" class="fade-in-section">
+            <h2>Confirma tu Asistencia</h2>
+            <form id="rsvp-form">
+                <input type="text" id="nombre-rsvp" name="nombre" placeholder="Nombre Completo" required>
+                <button type="button" id="whatsapp-confirm-btn">Confirmar por WhatsApp</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hecho con ❤️ para Guillermo y Heriberta</p>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Audio para música de fondo -->
+    <audio id="background-music" loop>
+        <source src="tem.MP3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <div id="audio-control-container">
+        <button id="audio-toggle" class="audio-button">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+</body>
+</html>
